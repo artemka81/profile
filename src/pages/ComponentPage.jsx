@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import componentsMap from '../componentMap';
-import { Component1 } from "../homework/Component1";
+import { Profile } from "../homework/Profile/Profile";
 import { Component2 } from "../homework/Component2";
 import { Component3 } from '../homework/Component3';
+import user from "../homework/Profile/user.json"
 
 const ComponentPage = () => {
 	const { componentId } = useParams();
@@ -16,8 +17,8 @@ const ComponentPage = () => {
 	// Рендерим компонент
 	return (
 		<>
-			<h1>{componentId}</h1>
-			{ComponentToRender === 'Component1' && <Component1 />}
+			<h1>{ComponentToRender}</h1>
+			{ComponentToRender === 'Profile' && <Profile userInfo={user} />}
 			{ComponentToRender === 'Component2' && <Component2 />}
 			{ComponentToRender === 'Component3' && <Component3 />}
 			{!ComponentToRender && <p>Компонент не найден</p>}

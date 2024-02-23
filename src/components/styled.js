@@ -9,7 +9,7 @@ export const Container = styled.div`
 		min-height: 100vh;
 		display: grid;
 		grid-template-columns: 20rem 1fr;
-	@media ${device.mobile} {
+	/* @media ${device.mobile} {
 		max-width: ${size.mobile};
 	}
 	@media ${device.tablet} {
@@ -20,7 +20,7 @@ export const Container = styled.div`
 	}
 	@media ${device.desktop} {
 		max-width: ${size.desktop};
-	}
+	} */
 `
 
 
