@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Title = styled.h3`
+export const Title = styled.div`
 	line-height:1;
 	font-size:18px;
 	color: #ffffff;
 	position: absolute;
-	bottom: -60px;
+	bottom: -80px;
 	left: 0%;
 	padding: 0 0 0 24px;
 `
@@ -29,7 +29,7 @@ export const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 40%, #000000 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0) 50%, #000000 100%);
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	}
