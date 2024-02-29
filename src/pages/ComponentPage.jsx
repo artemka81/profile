@@ -2,10 +2,11 @@ import { useParams } from 'react-router-dom';
 import componentsMap from '../componentMap';
 import { Profile } from "../homework/Profile/Profile";
 
-import { Component3 } from '../homework/Component3';
+
 import user from "../homework/Profile/user.json"
 import { RecipeReview } from '../homework/RecipeReview/RecipeReview';
 import recipes from "../homework/RecipeReview/recipes.json"
+import Pokemon from '../homework/Pokemon/Pokemon';
 
 const ComponentPage = () => {
 	const { componentId } = useParams();
@@ -22,7 +23,7 @@ const ComponentPage = () => {
 			<h1>{ComponentToRender}</h1>
 			{ComponentToRender === 'Profile' && <Profile userInfo={user} />}
 			{ComponentToRender === 'RecipeReview' && <RecipeReview recipes={recipes} />}
-			{ComponentToRender === 'Component3' && <Component3 />}
+			{ComponentToRender === 'Pokemon' && <Pokemon />}
 			{!ComponentToRender && <p>Компонент не найден</p>}
 		</>
 	);
