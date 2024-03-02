@@ -1,9 +1,37 @@
+
+import { useEffect } from 'react';
+import { useUrl } from '../../pages/ComponentPage';
 import { PokemonCard } from './PokemonCard';
 import { PokemonItem } from './PokemonItem';
 import { Container } from './pokemon.styled';
-
+import axios from 'axios';
 
 const Pokemon = () => {
+	const { url } = useUrl(); // Получение url из контекста
+
+
+
+
+
+
+
+	console.log('Component Pokemon loaded');
+
+	console.log("url", url)
+
+
+	const pokeFun = async () => {
+
+		const res = await axios.get(url);
+		console.log("res", res)
+
+	}
+
+
+	useEffect(() => {
+		pokeFun();
+	}, [url])
+
 	return (
 
 		<Container>
@@ -11,19 +39,6 @@ const Pokemon = () => {
 			<div className='pokemon-main'>
 				<div className='pokemon-list'>
 					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-					<PokemonItem />
-
-
-
 
 				</div>
 				<div className='pokemon-card'>

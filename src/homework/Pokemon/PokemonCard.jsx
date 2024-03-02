@@ -21,10 +21,25 @@ const StylePokemonCard = styled.div`
 		line-height:1;
 		padding: 0 8px;
 		border-radius: 6px;
+		margin-bottom: 16px;
+	}
+	.stats{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		p{
+			margin: 0;
+			padding: 8px 0;
+			line-height: 1.4;
+		}
+		p:nth-child(2n + 1){
+			background-color: #E0F2FE;
+		}
 	}
 `
 
 export const PokemonCard = () => {
+
 	return (
 		<StylePokemonCard>
 			<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg" alt="" srcSet="" />
@@ -34,7 +49,6 @@ export const PokemonCard = () => {
 			</div>
 			<div className="stats">
 				<p>hp:39</p>
-				<p>attack:52</p>
 				<p>attack:52</p>
 				<p>defense:42</p>
 				<p>special-attack:60</p>

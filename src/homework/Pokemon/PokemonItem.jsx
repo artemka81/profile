@@ -7,18 +7,30 @@ display: flex;
 	align-items: center;
 	width: 280px;
 	height: 140px;
+	padding: 1rem;
 	background-color: #ffffff;
 	border-radius: 6px;
 	border: 2px solid #E0F2FE;
 	cursor: pointer;
 	box-sizing: border-box;
+	h5{
+		padding: 0;
+		margin: 0;
+	}
 `
 
 
 export const PokemonItem = () => {
+
+
 	return (
-		<StyledPokemonItem>
-			<h4>PokemonItem</h4>
+
+		<StyledPokemonItem >
+			<h5>PokemonItem</h5>
+
+			<img src="" alt="" />
 		</StyledPokemonItem>
+
 	)
+
 }

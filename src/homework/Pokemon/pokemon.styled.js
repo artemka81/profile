@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	width: 100%;
-	position: relative;
 	display: grid;
   grid-template-rows: auto 1fr auto;
 	background-color: #E7ECF2;
@@ -23,6 +22,7 @@ export const Container = styled.div`
 			align-content: flex-start;
 			grid-template-columns: repeat(auto-fit, minmax(230px, 0.5fr));
 			gap: 1.8rem;
+			padding-bottom: 200px;
 			overflow-y: auto;
 			overflow-x: hidden;
 		}
@@ -48,8 +48,6 @@ export const Container = styled.div`
 	}
 	.pokemon-footer {
 		width:100%;
-		position: absolute;
-		bottom: -3rem;
-		left: 0;
+
 	}
 `
