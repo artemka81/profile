@@ -20,17 +20,26 @@ display: flex;
 `
 
 
-export const PokemonItem = () => {
-
+export const PokemonItem = ({ pokemon, loading, infoPokemon }) => {
+	// console.log("pokemon", pokemon);
 
 	return (
+		<>
+			{
+				loading ? <h1>Loading...</h1> :
+					pokemon.map((item) => {
+						return (
+							<StyledPokemonItem
+								key={item.id}
+								onClick={() => infoPokemon(item)}
+							>
+								<h5>{item.name}</h5>
 
-		<StyledPokemonItem >
-			<h5>PokemonItem</h5>
-
-			<img src="" alt="" />
-		</StyledPokemonItem>
-
+								<img src={item.sprites.front_default} alt="" />
+							</StyledPokemonItem >
+						)
+					})
+			}
+		</>
 	)
-
 }

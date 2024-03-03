@@ -14,14 +14,28 @@ const StylePokemonCard = styled.div`
 	h2{
 		text-transform: uppercase;
 		letter-spacing: .4px;
+		margin-bottom: 0;
+	}
+	img{
+
+		height: 200px;
+		width: 100%;
 	}
 	.abilities{
-		background-color:#E0F2FE;
-		font-size:12px;
-		line-height:1;
-		padding: 0 8px;
-		border-radius: 6px;
-		margin-bottom: 16px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		gap:.5rem;
+		margin-bottom: 1rem;
+		.abiliti{
+			background-color:#E0F2FE;
+			font-size:14px;
+			text-align: center;
+			line-height:1;
+			padding: 8px;
+			border-radius: 6px;
+			margin-bottom: 16px;
+		}
 	}
 	.stats{
 		width: 100%;
@@ -29,7 +43,7 @@ const StylePokemonCard = styled.div`
 		flex-direction: column;
 		p{
 			margin: 0;
-			padding: 8px 0;
+			padding: 8px;
 			line-height: 1.4;
 		}
 		p:nth-child(2n + 1){
@@ -38,23 +52,39 @@ const StylePokemonCard = styled.div`
 	}
 `
 
-export const PokemonCard = () => {
-
+export const PokemonCard = ({ data }) => {
+	// console.log("PokemonCard", data)
 	return (
-		<StylePokemonCard>
-			<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg" alt="" srcSet="" />
-			<h2>Charmander</h2>
-			<div className="abilities">
-				<p>blaze</p>
-			</div>
-			<div className="stats">
-				<p>hp:39</p>
-				<p>attack:52</p>
-				<p>defense:42</p>
-				<p>special-attack:60</p>
-				<p>speed:65</p>
-				<p>weight:85</p>
-			</div>
-		</StylePokemonCard>
+		<>
+			{
+				(!data) ? "Choose a Pokemon" :
+					(
+						<StylePokemonCard>
+							<img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" srcSet="" />
+							<h2>{data.name}</h2>
+
+							<div className="abilities">
+								{
+									data.abilities.map(({ ability }, index) => {
+										return (<p className='abiliti' key={index}>{ability.name}</p>)
+									})
+								}
+							</div>
+
+							<div className="stats">
+								{
+
+									data.stats.map((info, index) => {
+										return (
+											<p key={index}>{info.stat.name}:{info.base_stat}</p>
+										)
+									})
+								}
+							</div>
+						</StylePokemonCard>
+					)
+			}
+
+		</>
 	)
 }
